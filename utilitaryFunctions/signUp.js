@@ -10,8 +10,17 @@ const User = require("../models/User");
 const signUp = async (req, res, next) => {
   try {
     //destructuring
-    const { username, email, password, newsletter } = req.body;
+    let { username, email, password, newsletter } = req.body;
+    if (typeof newsletter === "string") {
+      if (newsletter === "true") {
+        newsletter = true;
+      } else if (newsletter === "false") {
+        newsletter = false;
+      }
+    }
+    console.log(typeof newsletter);
     if (!username || !email || !password) {
+      console.log(req.body);
       return res
         .status(400)
         .json({ message: "Il manque un paramètre dans les champs d'entrée" });

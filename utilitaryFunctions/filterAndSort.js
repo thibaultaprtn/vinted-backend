@@ -12,7 +12,7 @@ const filterAndSort = async (req, res) => {
         $lte: priceMax ? priceMax : 100000,
       },
     };
-    const sorting = sort ? { product_price: sort.substring(6) } : "";
+    const sorting = sort ? { product_price: sort.substring(6) } : null;
     const limit = 5;
     const skip = page ? limit * (page - 1) : 0;
     //const limit = page ? 5 * page : 5;
