@@ -28,10 +28,12 @@ mongoose.connect(process.env.MONGODB_URI);
 //import de mes routeurs
 const userRouter = require("./routes/user");
 const offerRouter = require("./routes/offer");
+const paymentRouter = require("./routes/payment");
 
 //utilisation des mes routeurs
 app.use("/user", userRouter); // => Permet d'indiquer que toutes les routes qui viennent du routeur userRouteur doivent débuter par /user, il n'est donc plus nécessaire de l'indiquer dans les routes de user.js
 app.use("/offer", offerRouter);
+app.use("/payment", paymentRouter);
 
 //Import des packages permettant de gérer les chaines de caractères, le cryptage, les buffers pour cloudinary
 const uid2 = require("uid2");
