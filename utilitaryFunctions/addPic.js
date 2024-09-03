@@ -16,6 +16,9 @@ cloudinary.config({
 //Elle suppose qu'on ne puisse pas mettre plusieurs photos dans le file dans le cas d'une requête pour ajouter/modifier la photo d'avatar d'un utilisateur
 
 const addPic = async (req, res, next) => {
+  // console.log("req.body", req.body);
+  // console.log("req.files =>", req.files);
+  // console.log("type of req.files", typeof req.files);
   //Remarque : il faudrait sécuriser le fait que l'on puisse
   try {
     if (req.files) {

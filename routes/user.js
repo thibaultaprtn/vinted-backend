@@ -14,6 +14,7 @@ const deleteProfil = require("../utilitaryFunctions/deleteProfil");
 const login = require("../utilitaryFunctions/login");
 
 router.post("/signup", fileUpload(), signUp, addPic, async (req, res) => {
+  console.log(req);
   res.status(201).json({
     _id: req.body._id,
     token: req.body.token,

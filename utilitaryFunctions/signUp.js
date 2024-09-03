@@ -18,7 +18,7 @@ const signUp = async (req, res, next) => {
         newsletter = false;
       }
     }
-    console.log(typeof newsletter);
+    // console.log(typeof newsletter);
     if (!username || !email || !password) {
       console.log(req.body);
       return res
